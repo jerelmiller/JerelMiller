@@ -107,7 +107,15 @@ a {
 }
 
 .content {
-  text-shadow: 1px 1px #FBFBFB;
+  text-shadow: 1px 1px #FFF;
   margin: 0 auto;
   width: 1000px;
+}
+.catch-phrase {
+  font-size: 85px;
+  line-height: 80px;
+  span.small {
+    font-size: 50px;
+    line-height: 60px;
+  }
 }
