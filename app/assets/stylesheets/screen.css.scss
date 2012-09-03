@@ -1,0 +1,113 @@
+$background_color: #DDD;
+$primary_font_family: Oswald, helvetica, sans-serif;
+$border_color: #555;
+$red: #BF3730;
+
+@mixin transition($element, $time: 0.5s) {
+  -webkit-transition: $element $time;
+  -moz-transition: $element $time;
+  -ms-transition: $element $time;
+  -o-transition: $element $time;
+  transition: $element $time;
+}
+
+body {
+  font-family: $primary_font_family;
+  background: $background_color;
+  color: #333;
+}
+
+a {
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.clear {
+  clear: both;
+}
+
+
+.header {
+  padding: 20px 0 0;
+  border-bottom: 2px solid $border_color;
+  width: 1000px;
+  margin: 0 auto 30px;
+  .logo {
+    // padding: 60px 0 0;
+    padding: 40px 0 0;
+    text-shadow: 0;
+    margin-left: 20px;
+    span.outer {
+      // font-size: 150px;
+      font-size: 100px;
+      span.inner {
+        font-size: 25px;
+        position: relative;
+        // right: 25px;
+        right: 15px;
+      }
+    }
+    span.outer.last {
+      position: relative;
+      // right: 164px;
+      // bottom: 50px;
+      // font-size: 147px;
+      font-size: 98px;
+      right: 121px;
+      bottom: 35px;
+    }
+  }
+  ul.menu {
+    list-style-type: none;
+    // margin: 110px 0 0;
+    margin: 70px 0 0;
+    padding: 0;
+    li {
+      display: inline;
+      margin-left: 30px;
+      font-size: 20px;
+      letter-spacing: 1px;
+      padding-top: 5px;
+      border-top: 2px solid transparent;
+      @include transition(border);
+      a {
+        color: #888;
+        @include transition(color);
+        &:hover {
+          color: $red;
+        }
+      }
+      &:hover {
+        color: #333;
+        border-top: 2px solid $border_color;
+      }
+    }
+    li.current {
+      a {
+        color: #333;
+      }
+    }
+  }
+  .cool-divider {
+    border-left: 2px solid $border_color;
+    border-right: 2px solid $border_color;
+    height: 20px;
+    margin: 0 auto;
+    position: relative;
+    top: 11px;
+  }
+}
+
+.content {
+  text-shadow: 1px 1px #FBFBFB;
+  margin: 0 auto;
+  width: 1000px;
+}
